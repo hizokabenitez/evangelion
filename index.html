@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fraud Detection Platform</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+</head
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>>
 <body>
     <header>
         <h1>Fraud Detection Platform</h1>
@@ -30,11 +31,31 @@
 <section class="tools">
     <h3>Tools</h3>
     <ul>
-        <li><a href="verify_email.html">Verify Email</a></li>
-        <li><a href="verify_ip.html">Verify IP</a></li>
-        <li><a href="verify_credit_card.html">Verify Credit Card</a></li>
-    </ul>
+        <l<ul>
+    <li v-for="tool in tools">
+        <a :href="tool.link">{{ tool.name }}</a>
+    </li>
+</ul>
 </section>
-    <script src="script.js"></script>
+    <script>
+    new Vue({
+        el: 'main',
+        data: {
+            tools: [
+                { name: 'Verify Email', link: 'verify_email.html' },
+                { name: 'Verify IP', link: 'verify_ip.html' },
+                { name: 'Verify Credit Card', link: 'verify_credit_card.html' }
+            ]
+        },
+        methods: {
+            login: function() {
+                alert('Login functionality to be implemented.');
+            },
+            signUp: function() {
+                alert('Sign up functionality to be implemented.');
+            }
+        }
+    });
+</script>
 </body>
 </html>
